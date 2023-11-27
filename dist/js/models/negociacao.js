@@ -20,4 +20,10 @@ export class Negociacao {
     get volume() {
         return this._quantidade * this._valor;
     }
+    static criaDe(data, quantidade, valor) {
+        const date = new Date(data.replace(/-/g, ","));
+        const quantidadeInt = parseInt(quantidade);
+        const valorFloat = parseFloat(valor);
+        return new Negociacao(date, quantidadeInt, valorFloat);
+    }
 }
